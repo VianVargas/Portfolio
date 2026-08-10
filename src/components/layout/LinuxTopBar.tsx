@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Image from "next/image";
 import { Search, Sun, Moon, LayoutGrid, FileText } from "lucide-react";
 import type { ThemeMode, WorkspaceTab } from "@/types";
@@ -35,6 +36,14 @@ export default function LinuxTopBar({
   setIsDesktopMode,
 }: Props) {
   const isLight = themeMode === "light";
+
+  const debouncedSetTheme = useMemo(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    return (mode: ThemeMode) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => setThemeMode(mode), 50);
+    };
+  }, [setThemeMode]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-3 py-2">
@@ -142,7 +151,7 @@ export default function LinuxTopBar({
 
           {/* Light / Dark Mode Toggle Button */}
           <button
-            onClick={() => setThemeMode(isLight ? "dark" : "light")}
+            onClick={() => debouncedSetTheme(isLight ? "dark" : "light")}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border transition-all cursor-pointer font-medium ${
               isLight
                 ? "bg-amber-100/80 hover:bg-amber-200/80 border-amber-300 text-amber-900 shadow-sm"

@@ -28,11 +28,21 @@ export default function Home() {
   const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
 
   useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light' || stored === 'dark') {
+      setThemeMode(stored);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setThemeMode('light');
+    }
+  }, []);
+
+  useEffect(() => {
     if (themeMode === 'light') {
       document.body.classList.add('light-mode');
     } else {
       document.body.classList.remove('light-mode');
     }
+    localStorage.setItem('theme', themeMode);
   }, [themeMode]);
 
   const handleTabChange = (tab: WorkspaceTab) => {
@@ -82,7 +92,6 @@ export default function Home() {
         <main className="relative z-10 space-y-12 pb-24">
           <Hero
             themeMode={themeMode}
-            onOpenResume={() => setIsResumeOpen(true)}
             onOpenContact={() => handleTabChange('contact')}
           />
 
