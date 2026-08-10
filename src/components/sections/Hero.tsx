@@ -7,13 +7,11 @@ import type { ThemeMode } from "@/types";
 
 interface Props {
   themeMode: ThemeMode;
-  onOpenResume: () => void;
   onOpenContact: () => void;
 }
 
 export default function Hero({
   themeMode,
-  onOpenResume,
   onOpenContact,
 }: Props) {
   const isLight = themeMode === "light";
@@ -21,7 +19,7 @@ export default function Hero({
   return (
     <section
       id="about"
-      className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <motion.div
@@ -38,7 +36,7 @@ export default function Hero({
             }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
-            <span>Hello there, Mabuhay!</span>
+            <span>hello there, mabuhay!</span>
           </div>
 
           <h1
@@ -55,10 +53,10 @@ export default function Hero({
             }`}
           >
             <p>
-              A Computer Science graduate. I combine technical problem-solving
-              with a strong focus on teamwork, clear communication, and
-              adaptability. Always learning, always building, and ready for the
-              next big challenge
+              An aspiring Software Engineer and a Computer Science graduate. I
+              combine technical problem-solving with a strong focus on teamwork,
+              clear communication, and adaptability. Always learning, always
+              building, and ready for the next big challenge
             </p>
           </div>
 
@@ -71,8 +69,9 @@ export default function Hero({
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <button
-              onClick={onOpenResume}
+            <a
+              href="/docs/Vargas_Resume.pdf"
+              download
               className={`px-6 py-3 rounded-xl border font-medium text-sm transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md ${
                 isLight
                   ? "bg-white hover:bg-blue-50 border-blue-200 text-blue-900 shadow-sm"
@@ -81,7 +80,7 @@ export default function Hero({
             >
               <FileText className="w-4 h-4 text-blue-500" />
               <span>Download Resume</span>
-            </button>
+            </a>
           </div>
         </motion.div>
 
