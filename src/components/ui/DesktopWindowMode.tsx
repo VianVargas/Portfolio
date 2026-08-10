@@ -34,7 +34,7 @@ const initialWindows: FloatingWindow[] = [
     id: 'about',
     title: 'About / Bio - Vian Andrei Vargas',
     icon: 'User',
-    isOpen: true,
+    isOpen: false,
     isMinimized: false,
     position: { x: 40, y: 80 },
     size: { width: 780, height: 500 },
@@ -44,7 +44,7 @@ const initialWindows: FloatingWindow[] = [
     id: 'experience',
     title: "Where I've Worked (Experience.sh)",
     icon: 'Briefcase',
-    isOpen: true,
+    isOpen: false,
     isMinimized: false,
     position: { x: 120, y: 140 },
     size: { width: 750, height: 480 },
@@ -126,7 +126,7 @@ export default function DesktopWindowMode({
   const renderWindowContent = (id: string) => {
     switch (id) {
       case 'about':
-        return <Hero themeMode={themeMode} onOpenResume={onOpenResume} onOpenContact={onOpenContact} />;
+        return <Hero themeMode={themeMode} onOpenContact={onOpenContact} />;
       case 'experience':
         return <Experience themeMode={themeMode} />;
       case 'tech':

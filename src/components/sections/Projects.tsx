@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Play } from 'lucide-react';
 import type { ThemeMode, ProjectItem } from '@/types';
 import { PROJECTS } from '@/config/projects';
 
@@ -22,14 +22,6 @@ const iconPaths: Record<string, string> = {
 export default function Projects({ themeMode = 'dark', onSelectProject }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const isLight = themeMode === 'light';
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? PROJECTS.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev === PROJECTS.length - 1 ? 0 : prev + 1));
-  };
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
@@ -140,48 +132,6 @@ export default function Projects({ themeMode = 'dark', onSelectProject }: Props)
                 </motion.div>
               );
             })}
-          </div>
-
-          <div className="flex items-center gap-6 mt-6 z-30 font-mono text-xs">
-            <button
-              onClick={handlePrev}
-              className={`p-2.5 rounded-full border transition-all cursor-pointer ${
-                isLight
-                  ? 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800 shadow-sm'
-                  : 'bg-slate-900 hover:bg-slate-800 border-white/15 text-slate-200 shadow-lg'
-              }`}
-              title="Previous Project"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {PROJECTS.map((_, dotIdx) => (
-                <button
-                  key={dotIdx}
-                  onClick={() => setActiveIndex(dotIdx)}
-                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                    dotIdx === activeIndex
-                      ? 'w-7 bg-blue-500 shadow-[0_0_10px_#3b82f6]'
-                      : isLight
-                        ? 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                        : 'w-2.5 bg-white/20 hover:bg-white/40'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={handleNext}
-              className={`p-2.5 rounded-full border transition-all cursor-pointer ${
-                isLight
-                  ? 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800 shadow-sm'
-                  : 'bg-slate-900 hover:bg-slate-800 border-white/15 text-slate-200 shadow-lg'
-              }`}
-              title="Next Project"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
           </div>
         </div>
       </div>

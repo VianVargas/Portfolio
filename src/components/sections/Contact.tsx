@@ -188,6 +188,9 @@ export default function Contact({ themeMode = "dark" }: Props) {
                   --- vian.dev ping statistics --- 0% packet loss, avg rtt =
                   12.1ms
                 </p>
+                <p className="text-amber-500 dark:text-amber-400 pt-1">
+                  mobile device configuration currently WIP
+                </p>
               </div>
             </div>
           </div>
