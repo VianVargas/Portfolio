@@ -18,9 +18,6 @@ export interface ExperienceItem {
 
 export interface TechSkill {
   name: string;
-  level: number;
-  experienceYears: string;
-  highlight?: boolean;
 }
 
 export interface TechStackGroup {
