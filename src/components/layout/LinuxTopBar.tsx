@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
-import { Search, Sun, Moon, LayoutGrid, FileText } from "lucide-react";
+import { Search, Sun, Moon, LayoutGrid, FileText, Menu, X } from "lucide-react";
 import type { ThemeMode, WorkspaceTab } from "@/types";
 
 interface Props {
@@ -36,6 +36,7 @@ export default function LinuxTopBar({
   setIsDesktopMode,
 }: Props) {
   const isLight = themeMode === "light";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const debouncedSetTheme = useMemo(() => {
     let timer: ReturnType<typeof setTimeout>;
@@ -46,7 +47,7 @@ export default function LinuxTopBar({
   }, [setThemeMode]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-3 py-2">
+    <header className="sticky top-0 left-0 right-0 z-40 px-3 py-2 relative">
       <div
         className={`liquid-glass rounded-xl px-3 py-2 flex items-center justify-between gap-2 text-xs font-mono shadow-2xl transition-all duration-300 ${
           isLight
@@ -57,15 +58,21 @@ export default function LinuxTopBar({
         {/* Left Section: Branding & Workspaces */}
         <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
           {/* Logo Badge */}
-          <div
-            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border ${
+          <button
+            onClick={() => {
+              setActiveTab("about");
+              setMenuOpen(false);
+            }}
+            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border cursor-pointer ${
               isLight
                 ? "bg-blue-50 border-blue-200 text-blue-900"
                 : "bg-white/5 border-white/10 text-white"
             }`}
           >
             <Image
-              src={isLight ? "/assets/mylogo-dark.png" : "/assets/mylogo-light.png"}
+              src={
+                isLight ? "/assets/mylogo-dark.png" : "/assets/mylogo-light.png"
+              }
               alt="Logo"
               width={20}
               height={20}
@@ -77,11 +84,28 @@ export default function LinuxTopBar({
             >
               vacv
             </span>
-          </div>
+          </button>
+
+          {/* Hamburger — mobile nav toggle */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`lg:hidden p-1.5 rounded-lg border transition-all cursor-pointer ${
+              isLight
+                ? "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
+                : "bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10"
+            }`}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? (
+              <X className="w-3.5 h-3.5" />
+            ) : (
+              <Menu className="w-3.5 h-3.5" />
+            )}
+          </button>
 
           {/* Workspaces Switcher */}
           <div
-            className={`flex items-center gap-1 p-1 rounded-lg border ${
+            className={`flex items-center gap-1 p-1 rounded-lg border max-lg:hidden ${
               isLight
                 ? "bg-slate-100 border-slate-200"
                 : "bg-black/30 border-white/5"
@@ -191,6 +215,50 @@ export default function LinuxTopBar({
           </button>
         </div>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40 lg:hidden"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div className="absolute top-full left-0 right-0 mt-1 z-50 lg:hidden">
+            <div
+              className={`rounded-xl border p-2 flex flex-col gap-1 ${
+                isLight
+                  ? "liquid-glass bg-white/95 border-blue-200/80 shadow-lg"
+                  : "liquid-glass bg-slate-950/95 border-blue-500/20 shadow-lg"
+              }`}
+            >
+              {workspaceMap.map((ws) => {
+                const isActive = activeTab === ws.id;
+                return (
+                  <button
+                    key={ws.id}
+                    onClick={() => {
+                      setActiveTab(ws.id);
+                      setMenuOpen(false);
+                    }}
+                    className={`px-3 py-2 rounded-lg text-sm font-mono transition-all cursor-pointer flex items-center gap-2 ${
+                      isActive
+                        ? isLight
+                          ? "bg-blue-600 text-white font-semibold"
+                          : "bg-blue-500/20 text-blue-300 font-semibold border border-blue-500/50"
+                        : isLight
+                          ? "text-slate-700 hover:bg-slate-100"
+                          : "text-slate-300 hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="text-xs opacity-60">[{ws.num}]</span>
+                    <span>{ws.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </>
+      )}
     </header>
   );
 }
