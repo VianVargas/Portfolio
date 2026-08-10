@@ -32,19 +32,27 @@ export default function Contact({ themeMode = "dark" }: Props) {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim()) return;
-    setSentSuccess(true);
-    setTimeout(() => {
-      setSentSuccess(false);
-      setSenderName("");
-      setSenderEmail("");
-      setMessage("");
-    }, 4000);
-  };
 
-  const web3formAction = "https://api.web3forms.com/submit";
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        setSentSuccess(true);
+        setSenderName('');
+        setSenderEmail('');
+        setMessage('');
+        setTimeout(() => setSentSuccess(false), 4000);
+      }
+    } catch {}
+  };
 
   return (
     <section
@@ -198,15 +206,10 @@ export default function Contact({ themeMode = "dark" }: Props) {
                     : "border-white/10 text-slate-400"
                 }`}
               >
-                <span>cat &gt; /dev/messages/vian.msg</span>
-                <span className="text-blue-500 font-semibold">
-                  SMTP Message Handler
-                </span>
+                <span>vacv: ~/send_email</span>
               </div>
 
               <form
-                action={web3formAction}
-                method="POST"
                 onSubmit={handleSubmit}
                 className="space-y-4 font-mono text-xs"
               >
@@ -214,7 +217,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 <input
                   type="hidden"
                   name="access_key"
-                  value="YOUR_WEB3FORM_ACCESS_KEY"
+                  value={process.env.NEXT_PUBLIC_WEB3FORM_KEY}
                 />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

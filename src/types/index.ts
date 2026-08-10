@@ -83,18 +83,6 @@ export interface PersonalInfo {
   github: string;
   linkedin: string;
   bio: string;
-  neofetch: {
-    os: string;
-    kernel: string;
-    uptime: string;
-    packages: string;
-    shell: string;
-    wm: string;
-    terminal: string;
-    cpu: string;
-    gpu: string;
-    memory: string;
-  };
 }
 
 export type { ReactNode };
