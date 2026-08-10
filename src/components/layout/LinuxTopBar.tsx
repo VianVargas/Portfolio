@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import {
   Search,
   Sun,
@@ -54,16 +55,15 @@ export default function LinuxTopBar({
         <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
           {/* Logo Badge */}
           <div
-            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border font-bold tracking-wider ${
+            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border ${
               isLight
                 ? 'bg-blue-50 border-blue-200 text-blue-900'
                 : 'bg-white/5 border-white/10 text-white'
             }`}
           >
-            <span className="w-2 h-2 rounded-full animate-pulse bg-blue-500 shadow-[0_0_8px_#3b82f6]" />
-            <span>VV</span>
+            <Image src="/assets/mylogo.png" alt="Logo" width={20} height={20} unoptimized className="h-5 w-auto" />
             <span className={`text-[10px] hidden sm:inline ${isLight ? 'text-blue-600' : 'text-slate-400'}`}>
-              vian@arch
+              vacv
             </span>
           </div>
 
