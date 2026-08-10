@@ -2,63 +2,71 @@ import type { ProjectItem } from "@/types";
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: 'pos-system',
-    title: 'Full-Scale POS System',
-    shortDesc: 'Comprehensive point-of-sale application handling inventory, real-time sales transactions, and financial reporting.',
-    fullDesc: 'Designed and built a comprehensive point-of-sale application handling inventory, sales, and reporting. Architected with a React and TypeScript frontend and Java Spring Boot backend connected to PostgreSQL.',
-    type: 'Full-Stack',
-    tags: ['React', 'Spring Boot', 'PostgreSQL', 'TypeScript'],
+    id: "ecograde",
+    title: "EcoGrade",
+    shortDesc:
+      "AI-powered waste analysis and segregation system that uses YOLOv11, HSV-based contamination detection, and MCDA to determine whether non-biodegradable materials are suitable for upcycling or downcycling.",
+    fullDesc:
+      "EcoGrade is an AI-powered waste analysis and segregation system that uses YOLOv11, HSV-based contamination detection, and MCDA to determine whether non-biodegradable materials are suitable for upcycling or downcycling. Running on a Raspberry Pi 5 with a servo-based mechanism, it analyzes one item at a time and automatically sorts it based on quality. EcoGrade aims to improve recycling accuracy, reduce manual sorting, and support more sustainable waste management.",
+    type: "AI / IoT",
+    image: "/assets/projects/ecograde.png",
+    tags: ["YOLOv11", "Python", "Raspberry Pi", "OpenCV", "MCDA"],
     features: [
-      'Interactive item checkout with quick barcode scanning & custom discount rules',
-      'Real-time inventory deduction & low-stock automated alerts',
-      'Daily/Monthly sales analytics with exportable PDF receipts',
-      'Multi-user role management (Cashier vs Administrator)',
-    ],
-    githubUrl: 'https://github.com/vianandreivargas',
-    metrics: [
-      { label: 'Avg Latency', value: '< 45ms' },
-      { label: 'Transaction Speed', value: '1,200/min' },
-      { label: 'Uptime', value: '99.9%' },
+      "AI-powered waste classification using YOLOv11",
+      "HSV-based contamination detection for material analysis",
+      "MCDA for upcycling vs. downcycling decisions",
+      "Raspberry Pi 5 with servo-based automatic sorting",
     ],
   },
   {
-    id: 'trello-app',
-    title: 'Trello-Style Task Management App',
-    shortDesc: 'Collaborative task board with drag-and-drop functionality, real-time status updates, and lightweight state management.',
-    fullDesc: 'Built a collaborative task board with drag-and-drop functionality, real-time updates, and user authentication. Focused on clean UX, responsive design, and fluid animations.',
-    type: 'Frontend',
-    tags: ['Next.js', 'TypeScript', 'MongoDB', 'Zustand'],
+    id: "splittr",
+    title: "Splittr",
+    shortDesc:
+      "Web3 bill-splitting application built on the Stellar Testnet. Upload a receipt or enter items manually, split costs among participants, and settle payments instantly in XLM.",
+    fullDesc:
+      "Splittr is a Web3 bill-splitting application built on the Stellar Testnet. Upload a receipt or enter items manually, split costs among participants, and settle payments instantly in XLM — all on-chain with a Soroban smart contract.",
+    type: "Web3",
+    image: "/assets/projects/splittr.png",
+    tags: ["Stellar", "Soroban", "XLM", "Blockchain"],
     features: [
-      'Drag and drop Kanban columns (Backlog, In Progress, Review, Done)',
-      'Subtask tracking with automated progress percentages',
-      'Tag filtering, priority flags, and task deadline countdowns',
-      'Zustand state persistence with instant optimistic UI updates',
-    ],
-    githubUrl: 'https://github.com/vianandreivargas',
-    metrics: [
-      { label: 'Drag UX', value: '60 FPS' },
-      { label: 'Sync Delay', value: 'Instant' },
-      { label: 'Storage', value: 'Local + MongoDB' },
+      "Upload receipt or enter items manually for splitting",
+      "Split costs among multiple participants seamlessly",
+      "Instant settlement in XLM on the Stellar Testnet",
+      "On-chain execution via Soroban smart contracts",
     ],
   },
   {
-    id: 'hyprland-dotfiles',
-    title: 'Minimalist Hyprland Glass Dotfiles',
-    shortDesc: 'Custom Linux desktop configuration featuring liquid glass Waybar panels, fuzzy launcher, and unix system monitors.',
-    fullDesc: 'A curated Linux environment setup designed for maximum development productivity. Features translucent glass blur panels, custom zsh prompts, and automated pacman deployment scripts.',
-    type: 'System Tool',
-    tags: ['Linux', 'Shell', 'Wayland', 'Lua'],
+    id: "underwater-xplorers",
+    title: "UnderwaterXplorers",
+    shortDesc:
+      "Interactive OpenGL project set in a dynamic underwater environment. Control a submarine through a 2D ocean filled with animated fish, bubbles, and colorful corals.",
+    fullDesc:
+      "UnderwaterXplorers is an interactive OpenGL project set in a dynamic underwater environment. The user controls a submarine that moves freely in a 2D ocean scene filled with animated fish, floating bubbles, and colorful corals. The environment responds to user input — corals can change size, the scene can switch between day and night, and various elements move and animate using transformations such as glTranslate, glScale, and glRotate. The project showcases an engaging aquatic ecosystem brought to life through real-time animations and user interaction.",
+    type: "OpenGL",
+    image: "/assets/projects/xplorers.png",
+    tags: ["OpenGL", "C++", "Graphics", "Animation"],
     features: [
-      'Waybar liquid glass blur panels with system CPU/RAM sparklines',
-      'Rofi / Wofi application launcher with terminal hotkeys',
-      'Zsh custom prompt with git branch & execution timer badges',
-      'One-command installation script for fresh Arch Linux setups',
+      "2D submarine movement in an animated ocean scene",
+      "Day/night cycle switching via user input",
+      "Coral size manipulation using glScale transformations",
+      "Animated fish, bubbles, and corals with glTranslate/glRotate",
     ],
-    githubUrl: 'https://github.com/vianandreivargas',
-    metrics: [
-      { label: 'RAM Idle', value: '450MB' },
-      { label: 'Boot Time', value: '4.2s' },
-      { label: 'Stars', value: '180+' },
+  },
+  {
+    id: "lifestream",
+    title: "Lifestream",
+    shortDesc:
+      "PHP-based web Blood Donation and Donor Finder System connecting donors and recipients through a web application with registration, profile management, and donor matching.",
+    fullDesc:
+      "LifeStream is a PHP-based web Blood Donation and Donor Finder System developed by Vargas, Javier, and Turingan. The platform connects blood donors and recipients through a web application where users can register, manage profiles, donate blood, and search for compatible donors stored in the system's database. It streamlines the donation process with features such as donor management, recipient search, donation history tracking, and announcement viewing. The admin dashboard, also built in PHP, enables administrators to manage users, coordinate donor–recipient matching based on priority, oversee blood collections, and publish announcements. LifeStream modernizes and simplifies the process of finding and donating blood, making it more efficient and accessible for both users and admins.",
+    type: "Web App",
+    image: "/assets/projects/lifestream.png",
+    tags: ["PHP", "MySQL", "Blood Donation", "Full-Stack"],
+    features: [
+      "Donor and recipient registration with profile management",
+      "Priority-based donor–recipient matching system",
+      "Donation history tracking and announcement viewing",
+      "Admin dashboard for user and collection management",
     ],
   },
 ];

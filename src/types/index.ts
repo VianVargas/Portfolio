@@ -31,10 +31,11 @@ export interface ProjectItem {
   title: string;
   shortDesc: string;
   fullDesc: string;
-  type: 'Full-Stack' | 'Frontend' | 'System Tool';
+  type: string;
   tags: string[];
   features: string[];
   githubUrl?: string;
+  image?: string;
   liveDemoType?: 'pos' | 'trello' | 'dotfiles';
   metrics?: { label: string; value: string }[];
 }

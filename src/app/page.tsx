@@ -12,6 +12,7 @@ import Certifications from '@/components/sections/Certifications';
 import Contact from '@/components/sections/Contact';
 import CommandPalette from '@/components/ui/CommandPalette';
 import ResumeModal from '@/components/ui/ResumeModal';
+import ProjectModal from '@/components/ui/ProjectModal';
 import DesktopWindowMode from '@/components/ui/DesktopWindowMode';
 import { PERSONAL_INFO } from '@/config/site';
 
@@ -20,9 +21,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<WorkspaceTab>('about');
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [isDesktopMode, setIsDesktopMode] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   useEffect(() => {
     if (themeMode === 'light') {
@@ -71,7 +71,7 @@ export default function Home() {
           themeMode={themeMode}
           onOpenResume={() => setIsResumeOpen(true)}
           onOpenContact={() => handleTabChange('contact')}
-          onSelectProject={(p) => setSelectedProject(p)}
+          onSelectProject={setSelectedProject}
         />
       ) : (
         /* Scroll Mode */
@@ -82,14 +82,11 @@ export default function Home() {
             onOpenContact={() => handleTabChange('contact')}
           />
 
+          <Projects themeMode={themeMode} onSelectProject={setSelectedProject} />
+
           <Experience themeMode={themeMode} />
 
           <TechStack themeMode={themeMode} />
-
-          <Projects
-            themeMode={themeMode}
-            onSelectProject={(p) => setSelectedProject(p)}
-          />
 
           <Certifications themeMode={themeMode} />
 
@@ -149,6 +146,12 @@ export default function Home() {
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
+      />
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </div>
   );
