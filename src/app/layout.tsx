@@ -15,6 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Portfolio | Vian Andrei Vargas",
   description: "Software Engineer — building reliable, high-quality solutions.",
+  icons: {
+    icon: "/assets/favicon-logo.png",
+  },
 };
 
 export default function RootLayout({
