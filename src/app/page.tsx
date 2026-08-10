@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 import type { ThemeMode, WorkspaceTab, ProjectItem, CertificationItem } from '@/types';
 import LiquidBackground from '@/components/ui/LiquidBackground';
 import LinuxTopBar from '@/components/layout/LinuxTopBar';
@@ -107,7 +108,14 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-blue-500">[VV]</span>
+            <Image
+              src={isLight ? "/assets/mylogo-dark.png" : "/assets/mylogo-light.png"}
+              alt="Logo"
+              width={20}
+              height={20}
+              unoptimized
+              className="h-4 w-auto"
+            />
             <span>
               &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
             </span>

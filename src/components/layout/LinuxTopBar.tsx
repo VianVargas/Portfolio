@@ -16,10 +16,10 @@ interface Props {
 }
 
 const workspaceMap: { id: WorkspaceTab; label: string; num: string }[] = [
-  { id: "about", label: "about", num: "1" },
-  { id: "experience", label: "exp", num: "2" },
-  { id: "tech", label: "stack", num: "3" },
-  { id: "projects", label: "proj", num: "4" },
+  { id: "about", label: "home", num: "1" },
+  { id: "projects", label: "proj", num: "2" },
+  { id: "experience", label: "exp", num: "3" },
+  { id: "tech", label: "stack", num: "4" },
   { id: "certs", label: "certs", num: "5" },
   { id: "contact", label: "contact", num: "6" },
 ];
@@ -179,15 +179,6 @@ export default function LinuxTopBar({
           >
             <Search className="w-3.5 h-3.5 text-blue-500" />
             <span className="font-medium">Quick Menu</span>
-            <kbd
-              className={`hidden sm:inline-block px-1.5 py-0.5 text-[10px] rounded border ${
-                isLight
-                  ? "bg-white border-blue-200 text-blue-700"
-                  : "bg-black/40 border-white/15 text-slate-400"
-              }`}
-            >
-              Ctrl+K
-            </kbd>
           </button>
         </div>
       </div>
