@@ -13,7 +13,7 @@ import {
   Minus,
   FileText,
 } from 'lucide-react';
-import type { ThemeMode, WorkspaceTab, FloatingWindow, ProjectItem } from '@/types';
+import type { ThemeMode, WorkspaceTab, FloatingWindow, ProjectItem, CertificationItem } from '@/types';
 import Hero from '@/components/sections/Hero';
 import Experience from '@/components/sections/Experience';
 import TechStack from '@/components/sections/TechStack';
@@ -26,6 +26,7 @@ interface Props {
   onOpenResume: () => void;
   onOpenContact: () => void;
   onSelectProject: (p: ProjectItem) => void;
+  onSelectCert: (cert: CertificationItem) => void;
 }
 
 const initialWindows: FloatingWindow[] = [
@@ -66,6 +67,7 @@ export default function DesktopWindowMode({
   onOpenResume,
   onOpenContact,
   onSelectProject,
+  onSelectCert,
 }: Props) {
   const [windows, setWindows] = useState<FloatingWindow[]>(initialWindows);
   const [maxZIndex, setMaxZIndex] = useState(20);
@@ -132,7 +134,7 @@ export default function DesktopWindowMode({
       case 'projects':
         return <Projects themeMode={themeMode} onSelectProject={onSelectProject} />;
       case 'certs':
-        return <Certifications themeMode={themeMode} />;
+        return <Certifications themeMode={themeMode} onSelectCert={onSelectCert} />;
       case 'contact':
         return <Contact themeMode={themeMode} />;
       default:

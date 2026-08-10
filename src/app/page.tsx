@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { ThemeMode, WorkspaceTab, ProjectItem } from '@/types';
+import type { ThemeMode, WorkspaceTab, ProjectItem, CertificationItem } from '@/types';
 import LiquidBackground from '@/components/ui/LiquidBackground';
 import LinuxTopBar from '@/components/layout/LinuxTopBar';
 import Hero from '@/components/sections/Hero';
@@ -13,6 +13,7 @@ import Contact from '@/components/sections/Contact';
 import CommandPalette from '@/components/ui/CommandPalette';
 import ResumeModal from '@/components/ui/ResumeModal';
 import ProjectModal from '@/components/ui/ProjectModal';
+import CertificationModal from '@/components/ui/CertificationModal';
 import DesktopWindowMode from '@/components/ui/DesktopWindowMode';
 import { PERSONAL_INFO } from '@/config/site';
 
@@ -23,6 +24,7 @@ export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isDesktopMode, setIsDesktopMode] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
 
   useEffect(() => {
     if (themeMode === 'light') {
@@ -72,6 +74,7 @@ export default function Home() {
           onOpenResume={() => setIsResumeOpen(true)}
           onOpenContact={() => handleTabChange('contact')}
           onSelectProject={setSelectedProject}
+          onSelectCert={setSelectedCert}
         />
       ) : (
         /* Scroll Mode */
@@ -88,7 +91,7 @@ export default function Home() {
 
           <TechStack themeMode={themeMode} />
 
-          <Certifications themeMode={themeMode} />
+          <Certifications themeMode={themeMode} onSelectCert={setSelectedCert} />
 
           <Contact themeMode={themeMode} />
         </main>
@@ -152,6 +155,12 @@ export default function Home() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
+      />
+
+      {/* Certification Detail Modal */}
+      <CertificationModal
+        cert={selectedCert}
+        onClose={() => setSelectedCert(null)}
       />
     </div>
   );

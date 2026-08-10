@@ -45,9 +45,9 @@ export interface CertificationItem {
   title: string;
   issuer: string;
   year: string;
-  credentialId?: string;
-  badgeIcon: string;
+  description: string;
   skills: string[];
+  link?: string;
 }
 
 export interface SystemStats {
