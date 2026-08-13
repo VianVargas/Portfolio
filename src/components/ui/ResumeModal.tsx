@@ -36,13 +36,13 @@ export default function ResumeModal({ isOpen, onClose }: Props) {
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs font-mono transition-colors cursor-pointer flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs font-mono transition-all active:scale-[0.97] cursor-pointer flex items-center gap-1.5"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Save PDF</span>
             </button>
 
-            <button onClick={onClose} className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer ml-2">
+            <button onClick={onClose} className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer ml-2 transition-transform active:scale-[0.97]">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -60,7 +60,7 @@ export default function ResumeModal({ isOpen, onClose }: Props) {
 
         <div className="px-5 py-3 bg-slate-900/90 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
           <span>{PERSONAL_INFO.name} • Portfolio Resume</span>
-          <button onClick={onClose} className="px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans cursor-pointer">
+          <button onClick={onClose} className="px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans cursor-pointer transition-transform active:scale-[0.97]">
             Close
           </button>
         </div>

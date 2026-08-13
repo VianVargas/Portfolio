@@ -74,7 +74,6 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 : "bg-white/5 border-white/10 text-slate-400"
             }`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
             <span>contact</span>
           </div>
 
@@ -104,7 +103,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={handleCopyEmail}
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md group ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md group ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"
@@ -123,7 +122,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"
@@ -137,7 +136,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"
@@ -302,7 +301,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer font-sans bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                  className="w-full py-3 rounded-xl font-bold text-sm transition-all active:scale-[0.97] flex items-center justify-center gap-2 cursor-pointer font-sans bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 >
                   {sentSuccess ? (
                     <>

@@ -154,7 +154,7 @@ export default function DesktopWindowMode({
             <button
               key={app.id}
               onClick={() => toggleWindowOpen(app.id)}
-              className={`flex flex-col items-center gap-2 p-3 rounded-2xl transition-all group cursor-pointer border border-transparent ${
+              className={`flex flex-col items-center gap-2 p-3 rounded-2xl transition-all active:scale-[0.97] group cursor-pointer border border-transparent ${
                 isLight ? 'hover:bg-blue-100/50 hover:border-blue-200' : 'hover:bg-white/10 hover:border-white/10'
               }`}
             >
@@ -208,15 +208,15 @@ export default function DesktopWindowMode({
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleClose(win.id)}
-                  className="w-3 h-3 rounded-full bg-rose-500 hover:bg-rose-600 transition-colors cursor-pointer"
+                  className="w-3 h-3 rounded-full bg-rose-500 hover:bg-rose-600 transition-all active:scale-[0.97] cursor-pointer"
                   title="Close"
                 />
                 <button
                   onClick={() => handleMinimize(win.id)}
-                  className="w-3 h-3 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors cursor-pointer"
+                  className="w-3 h-3 rounded-full bg-amber-500 hover:bg-amber-600 transition-all active:scale-[0.97] cursor-pointer"
                   title="Minimize"
                 />
-                <button className="w-3 h-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-colors cursor-pointer" title="Maximize" />
+                <button className="w-3 h-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-all active:scale-[0.97] cursor-pointer" title="Maximize" />
                 <span className={`ml-3 text-xs font-mono font-semibold truncate ${isLight ? 'text-slate-900' : 'text-slate-300'}`}>
                   {win.title}
                 </span>
@@ -261,7 +261,7 @@ export default function DesktopWindowMode({
               <button
                 key={app.id}
                 onClick={() => toggleWindowOpen(app.id)}
-                className={`p-2.5 rounded-xl transition-all cursor-pointer relative ${
+                className={`p-2.5 rounded-xl transition-all active:scale-[0.97] cursor-pointer relative ${
                   isOpen
                     ? 'bg-blue-500/20 text-blue-500 border border-blue-500/40'
                     : isLight
@@ -282,7 +282,7 @@ export default function DesktopWindowMode({
 
           <button
             onClick={onOpenResume}
-            className={`p-2.5 rounded-xl border cursor-pointer ${
+            className={`p-2.5 rounded-xl border cursor-pointer transition-transform active:scale-[0.97] ${
               isLight
                 ? 'bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100'
                 : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'

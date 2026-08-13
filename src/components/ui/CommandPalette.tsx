@@ -90,7 +90,7 @@ export default function CommandPalette({
             className={`flex-1 bg-transparent outline-none font-mono text-sm ${isLight ? 'text-slate-900 placeholder-slate-400' : 'text-white placeholder-slate-400'}`}
             autoFocus
           />
-          <button onClick={onClose} className="p-1 rounded text-slate-400 hover:text-blue-500 cursor-pointer">
+          <button onClick={onClose} className="p-1 rounded text-slate-400 hover:text-blue-500 cursor-pointer transition-transform active:scale-[0.97]">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -108,7 +108,7 @@ export default function CommandPalette({
                 <button
                   key={item.id}
                   onClick={item.action}
-                  className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all text-left cursor-pointer group ${
+                  className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all active:scale-[0.97] text-left cursor-pointer group ${
                     isLight
                       ? 'hover:bg-blue-50 border-transparent hover:border-blue-200'
                       : 'hover:bg-white/10 border-transparent hover:border-white/10'

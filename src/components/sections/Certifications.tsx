@@ -50,7 +50,6 @@ export default function Certifications({ themeMode = 'dark', onSelectCert }: Pro
               ? 'bg-blue-50 border-blue-200 text-blue-900'
               : 'bg-white/5 border-white/10 text-slate-400'
           }`}>
-            <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]" />
             <span>certifications</span>
           </div>
 
@@ -64,7 +63,7 @@ export default function Certifications({ themeMode = 'dark', onSelectCert }: Pro
         <div className="relative pt-2 pb-2">
           <button
             onClick={handlePrev}
-              className={`absolute left-0 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
+              className={`absolute left-0 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border flex items-center justify-center transition-all active:scale-[0.97] cursor-pointer ${
                 isLight
                   ? 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800 shadow-md'
                   : 'bg-slate-900/80 hover:bg-slate-800 border-white/10 text-slate-300 hover:text-white hover:bg-white/10 shadow-lg'
@@ -133,7 +132,7 @@ export default function Certifications({ themeMode = 'dark', onSelectCert }: Pro
 
           <button
             onClick={handleNext}
-            className={`absolute right-0 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
+            className={`absolute right-0 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border flex items-center justify-center transition-all active:scale-[0.97] cursor-pointer ${
               isLight
                 ? 'bg-white hover:bg-slate-100 border-blue-400 text-slate-800 shadow-md ring-2 ring-blue-200'
                 : 'bg-slate-900/80 hover:bg-slate-800 border-white/10 text-slate-300 hover:text-white hover:bg-white/10 shadow-lg'
@@ -149,7 +148,7 @@ export default function Certifications({ themeMode = 'dark', onSelectCert }: Pro
             <button
               key={dotIdx}
               onClick={() => setCurrentIndex(dotIdx)}
-              className={`h-2 rounded-full transition-all cursor-pointer ${
+              className={`h-2 rounded-full transition-all active:scale-[0.97] cursor-pointer ${
                 dotIdx === currentIndex
                   ? 'w-6 bg-blue-500 shadow-[0_0_8px_#3b82f6]'
                   : isLight

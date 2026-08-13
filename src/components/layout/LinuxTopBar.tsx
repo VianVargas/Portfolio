@@ -63,7 +63,7 @@ export default function LinuxTopBar({
               setActiveTab("about");
               setMenuOpen(false);
             }}
-            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border cursor-pointer ${
+            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border cursor-pointer transition-transform active:scale-[0.97] ${
               isLight
                 ? "bg-blue-50 border-blue-200 text-blue-900"
                 : "bg-white/5 border-white/10 text-white"
@@ -89,7 +89,7 @@ export default function LinuxTopBar({
           {/* Hamburger — mobile nav toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`lg:hidden p-1.5 rounded-lg border transition-all cursor-pointer ${
+            className={`lg:hidden p-1.5 rounded-lg border transition-all active:scale-[0.97] cursor-pointer ${
               isLight
                 ? "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
                 : "bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10"
@@ -117,7 +117,7 @@ export default function LinuxTopBar({
                 <button
                   key={ws.id}
                   onClick={() => setActiveTab(ws.id)}
-                  className={`px-2 py-1 rounded-md transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-2 py-1 rounded-md transition-all active:scale-[0.97] duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                     isActive
                       ? isLight
                         ? "bg-blue-600 text-white font-semibold shadow-sm"
@@ -141,7 +141,7 @@ export default function LinuxTopBar({
           {/* Mode Switcher: Desktop Windows vs Scroll */}
           <button
             onClick={() => setIsDesktopMode(!isDesktopMode)}
-            className={`p-1.5 rounded-lg border transition-all cursor-pointer hidden md:flex items-center ${
+            className={`p-1.5 rounded-lg border transition-all active:scale-[0.97] cursor-pointer hidden md:flex items-center ${
               isDesktopMode
                 ? "bg-blue-600 text-white border-blue-500 shadow-sm"
                 : isLight
@@ -160,7 +160,7 @@ export default function LinuxTopBar({
           {/* Resume Modal Launcher */}
           <button
             onClick={onOpenResume}
-            className={`p-1.5 rounded-lg border transition-all cursor-pointer flex items-center gap-1 ${
+            className={`p-1.5 rounded-lg border transition-all active:scale-[0.97] cursor-pointer flex items-center gap-1 ${
               isLight
                 ? "bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-900"
                 : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white"
@@ -176,7 +176,7 @@ export default function LinuxTopBar({
           {/* Light / Dark Mode Toggle Button */}
           <button
             onClick={() => debouncedSetTheme(isLight ? "dark" : "light")}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border transition-all cursor-pointer font-medium ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border transition-all active:scale-[0.97] cursor-pointer font-medium ${
               isLight
                 ? "bg-amber-100/80 hover:bg-amber-200/80 border-amber-300 text-amber-900 shadow-sm"
                 : "bg-blue-950/80 hover:bg-blue-900/80 border-blue-500/40 text-blue-300 shadow-[0_0_12px_rgba(59,130,246,0.3)]"
@@ -203,7 +203,7 @@ export default function LinuxTopBar({
           {/* Quick Menu Launcher */}
           <button
             onClick={onOpenCommandPalette}
-            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
+            className={`flex items-center gap-2 px-2.5 py-1 rounded-lg border transition-all active:scale-[0.97] cursor-pointer ${
               isLight
                 ? "bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-900"
                 : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white"
@@ -240,7 +240,7 @@ export default function LinuxTopBar({
                       setActiveTab(ws.id);
                       setMenuOpen(false);
                     }}
-                    className={`px-3 py-2 rounded-lg text-sm font-mono transition-all cursor-pointer flex items-center gap-2 ${
+                    className={`px-3 py-2 rounded-lg text-sm font-mono transition-all active:scale-[0.97] cursor-pointer flex items-center gap-2 ${
                       isActive
                         ? isLight
                           ? "bg-blue-600 text-white font-semibold"
