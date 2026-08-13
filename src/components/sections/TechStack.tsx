@@ -23,7 +23,6 @@ export default function TechStack({ themeMode = 'dark' }: Props) {
           <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-md border text-xs font-mono ${
             isLight ? 'bg-blue-50 border-blue-200 text-blue-800' : 'bg-white/5 border-white/10 text-slate-400'
           }`}>
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
             <span>tech stack</span>
           </div>
 

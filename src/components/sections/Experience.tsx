@@ -31,7 +31,6 @@ export default function Experience({ themeMode = "dark" }: Props) {
                 : "bg-white/5 border-white/10 text-slate-400"
             }`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
             <span>experience</span>
           </div>
 
