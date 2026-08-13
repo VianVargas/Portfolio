@@ -33,7 +33,6 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
                   : "bg-white/5 border-white/10 text-slate-400"
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]" />
               <span>hello there, mabuhay!</span>
             </div>
           </div>
@@ -60,18 +59,22 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
           </div>
 
           <div className="flex flex-wrap items-center gap-4 pt-4 justify-center min-[1080px]:justify-start">
-            <button
+            <motion.button
               onClick={onOpenContact}
-              className="px-6 py-3 rounded-xl font-medium text-sm transition-all flex items-center gap-2 cursor-pointer bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 450, damping: 22 }}
+              className="px-6 py-3 rounded-xl font-medium text-sm flex items-center gap-2 cursor-pointer bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-700 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </motion.button>
 
-            <a
+            <motion.a
               href="/docs/Vargas_Resume.pdf"
               download
-              className={`px-6 py-3 rounded-xl border font-medium text-sm transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 450, damping: 22 }}
+              className={`px-6 py-3 rounded-xl border font-medium text-sm flex items-center gap-2 cursor-pointer backdrop-blur-md ${
                 isLight
                   ? "bg-white hover:bg-blue-50 border-blue-200 text-blue-900 shadow-sm"
                   : "bg-white/5 hover:bg-white/10 border-white/15 text-slate-200"
@@ -79,7 +82,7 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
             >
               <FileText className="w-4 h-4 text-blue-500" />
               <span>Download Resume</span>
-            </a>
+            </motion.a>
           </div>
         </motion.div>
 
