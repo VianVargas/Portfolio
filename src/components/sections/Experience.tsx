@@ -31,7 +31,7 @@ export default function Experience({ themeMode = "dark" }: Props) {
                 : "bg-white/5 border-white/10 text-slate-400"
             }`}
           >
-            <span>experience</span>
+            <span>-experience</span>
           </div>
 
           <h2

@@ -40,15 +40,15 @@ export default function Contact({ themeMode = "dark" }: Props) {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         body: formData,
       });
       if (response.ok) {
         setSentSuccess(true);
-        setSenderName('');
-        setSenderEmail('');
-        setMessage('');
+        setSenderName("");
+        setSenderEmail("");
+        setMessage("");
         setTimeout(() => setSentSuccess(false), 4000);
       }
     } catch {}
@@ -74,7 +74,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 : "bg-white/5 border-white/10 text-slate-400"
             }`}
           >
-            <span>contact</span>
+            <span>-contact</span>
           </div>
 
           <h2
@@ -103,7 +103,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={handleCopyEmail}
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md group ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer group ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"
@@ -122,7 +122,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"
@@ -136,7 +136,7 @@ export default function Contact({ themeMode = "dark" }: Props) {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+                className={`px-4 py-3 rounded-xl border font-medium text-xs sm:text-sm transition-all active:scale-[0.97] flex items-center gap-2 cursor-pointer ${
                   isLight
                     ? "bg-white border-blue-200 text-slate-800 hover:bg-blue-50"
                     : "bg-white/5 border-white/15 text-slate-200 hover:bg-white/10"

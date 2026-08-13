@@ -33,7 +33,7 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
                   : "bg-white/5 border-white/10 text-slate-400"
               }`}
             >
-              <span>hello there, mabuhay!</span>
+              <span>-hello there, mabuhay!</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
               An aspiring Software Engineer and a Computer Science graduate. I
               combine technical problem-solving with a strong focus on teamwork,
               clear communication, and adaptability. Always learning, always
-              building, and ready for the next big challenge
+              building, and ready for the next big challenge.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
               download
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 450, damping: 22 }}
-              className={`px-6 py-3 rounded-xl border font-medium text-sm flex items-center gap-2 cursor-pointer backdrop-blur-md ${
+              className={`px-6 py-3 rounded-xl border font-medium text-sm flex items-center gap-2 cursor-pointer ${
                 isLight
                   ? "bg-white hover:bg-blue-50 border-blue-200 text-blue-900 shadow-sm"
                   : "bg-white/5 hover:bg-white/10 border-white/15 text-slate-200"

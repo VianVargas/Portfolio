@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import type { ThemeMode } from '@/types';
-import { TECH_STACK } from '@/config/tech-stack';
+import { motion } from "motion/react";
+import type { ThemeMode } from "@/types";
+import { TECH_STACK } from "@/config/tech-stack";
 
 interface Props {
   themeMode?: ThemeMode;
 }
 
-export default function TechStack({ themeMode = 'dark' }: Props) {
-  const isLight = themeMode === 'light';
+export default function TechStack({ themeMode = "dark" }: Props) {
+  const isLight = themeMode === "light";
 
   return (
     <section id="tech" className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
@@ -20,15 +20,21 @@ export default function TechStack({ themeMode = 'dark' }: Props) {
           viewport={{ once: true }}
           className="space-y-3"
         >
-          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-md border text-xs font-mono ${
-            isLight ? 'bg-blue-50 border-blue-200 text-blue-800' : 'bg-white/5 border-white/10 text-slate-400'
-          }`}>
-            <span>tech stack</span>
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-md border text-xs font-mono ${
+              isLight
+                ? "bg-blue-50 border-blue-200 text-blue-800"
+                : "bg-white/5 border-white/10 text-slate-400"
+            }`}
+          >
+            <span>-tech stack</span>
           </div>
 
-          <h2 className={`text-3xl sm:text-4xl font-bold tracking-tight font-sans ${
-            isLight ? 'text-slate-900' : 'text-white'
-          }`}>
+          <h2
+            className={`text-3xl sm:text-4xl font-bold tracking-tight font-sans ${
+              isLight ? "text-slate-900" : "text-white"
+            }`}
+          >
             Technologies I Work With
           </h2>
         </motion.div>
@@ -44,9 +50,11 @@ export default function TechStack({ themeMode = 'dark' }: Props) {
               className="space-y-3"
             >
               <div className="flex items-center gap-3">
-                <h3 className={`text-xs font-mono font-semibold tracking-widest uppercase ${
-                  isLight ? 'text-slate-500' : 'text-slate-400'
-                }`}>
+                <h3
+                  className={`text-xs font-mono font-semibold tracking-widest uppercase ${
+                    isLight ? "text-slate-500" : "text-slate-400"
+                  }`}
+                >
                   {group.category}
                 </h3>
               </div>
@@ -57,8 +65,8 @@ export default function TechStack({ themeMode = 'dark' }: Props) {
                     key={skill.name}
                     className={`px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border text-xs sm:text-sm font-mono ${
                       isLight
-                        ? 'bg-white/60 backdrop-blur-sm border-blue-200/50 text-slate-800'
-                        : 'bg-white/5 backdrop-blur-sm border-white/10 text-slate-200'
+                        ? "bg-white/60 border-blue-200/50 text-slate-800"
+                        : "bg-white/5 border-white/10 text-slate-200"
                     }`}
                   >
                     {skill.name}

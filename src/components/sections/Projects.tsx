@@ -78,7 +78,7 @@ export default function Projects({
                 : "bg-white/5 border-white/10 text-slate-400"
             }`}
           >
-            <span>projects</span>
+            <span>-projects</span>
           </div>
 
           <h2
@@ -131,7 +131,7 @@ export default function Projects({
                   className={`absolute w-[80%] sm:w-[500px] rounded-[28px] p-6 sm:p-7 border ${
                     isLight
                       ? "bg-white border-slate-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-slate-800"
-                      : "bg-slate-900/95 border-white/15 shadow-[0_25px_60px_rgba(0,0,0,0.6)] text-white backdrop-blur-xl"
+                      : "bg-slate-900/95 border-white/15 shadow-[0_25px_60px_rgba(0,0,0,0.6)] text-white"
                   }`}
                 >
                   <div className="space-y-6">
