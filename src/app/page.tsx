@@ -140,8 +140,8 @@ export default function Home() {
               <Image
                 src={
                   isLight
-                    ? "/assets/mylogo-dark.png"
-                    : "/assets/mylogo-light.png"
+                    ? "/assets/mylogo-dark.webp"
+                    : "/assets/mylogo-light.webp"
                 }
                 alt="Logo"
                 width={20}

@@ -71,7 +71,9 @@ export default function LinuxTopBar({
           >
             <Image
               src={
-                isLight ? "/assets/mylogo-dark.png" : "/assets/mylogo-light.png"
+                isLight
+                  ? "/assets/mylogo-dark.webp"
+                  : "/assets/mylogo-light.webp"
               }
               alt="Logo"
               width={20}

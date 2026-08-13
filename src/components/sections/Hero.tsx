@@ -124,7 +124,7 @@ export default function Hero({ themeMode, onOpenContact }: Props) {
               } rounded-b-xl overflow-hidden`}
             >
               <Image
-                src="/assets/myprofile.png"
+                src="/assets/myprofile.webp"
                 alt="Vian Andrei Vargas"
                 width={325}
                 height={300}

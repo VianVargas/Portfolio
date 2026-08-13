@@ -13,10 +13,10 @@ interface Props {
 }
 
 const iconPaths: Record<string, string> = {
-  ecograde: "/assets/projects/icons/ecograde.png",
-  splittr: "/assets/projects/icons/splittr.png",
-  "underwater-xplorers": "/assets/projects/icons/xplorers.png",
-  lifestream: "/assets/projects/icons/lifestream.png",
+  ecograde: "/assets/projects/icons/ecograde.webp",
+  splittr: "/assets/projects/icons/splittr.webp",
+  "underwater-xplorers": "/assets/projects/icons/xplorers.webp",
+  lifestream: "/assets/projects/icons/lifestream.webp",
 };
 
 const SWIPE_THRESHOLD = 60;
@@ -111,7 +111,16 @@ export default function Projects({
                 <motion.div
                   key={proj.id}
                   animate={{
-                    x: offset === -1 ? (isMobile ? "-30%" : "-28%") : offset === 1 ? (isMobile ? "30%" : "28%") : 0,
+                    x:
+                      offset === -1
+                        ? isMobile
+                          ? "-30%"
+                          : "-28%"
+                        : offset === 1
+                          ? isMobile
+                            ? "30%"
+                            : "28%"
+                          : 0,
                     rotate: offset === -1 ? -6 : offset === 1 ? 6 : 0,
                     scale: isActive ? 1 : isMobile ? 0.9 : 0.88,
                     opacity: isActive ? 1 : isMobile ? 0.9 : 0.75,
