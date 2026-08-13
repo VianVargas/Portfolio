@@ -129,7 +129,7 @@ export default function Home() {
 
         {/* Minimalist Linux Footer */}
         <footer
-          className={`relative z-10 py-8 px-4 border-t text-center font-mono text-xs backdrop-blur-md ${
+          className={`relative z-10 py-8 px-4 border-t text-center font-mono text-xs ${
             isLight
               ? "bg-slate-100/90 border-blue-200 text-slate-600"
               : "bg-black/40 border-white/10 text-slate-500"

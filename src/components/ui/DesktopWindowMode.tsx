@@ -249,7 +249,7 @@ export default function DesktopWindowMode({
       {/* Bottom Linux Desktop Dock */}
       <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40">
         <div
-          className={`liquid-glass rounded-2xl px-4 py-2 border flex items-center gap-3 shadow-2xl backdrop-blur-xl ${
+          className={`liquid-glass rounded-2xl px-4 py-2 border flex items-center gap-3 shadow-2xl ${
             isLight ? 'bg-white/90 border-blue-200' : 'border-white/15'
           }`}
         >
